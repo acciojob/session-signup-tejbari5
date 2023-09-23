@@ -1,29 +1,19 @@
-// //your JS code here. If required.
-console.log("nevil")
-const button=document.getElementById("submit");
+//your JS code here. If required.
+const pass1 = document.getElementById("password")
+const pass2 = document.getElementById("confirm-password")
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const button = document.getElementById("submit");
 
-
-let signup= document.getElementById("signup-form")
-
-signup.addEventListener("submit",function(event)=>{
-	event.preventDefault();
-	const name=document.getElementById("name").value;
-	const email= document.getElementById("email").value;
-	const password=document.getElementById("password").value;
-	const confirm= document.getElementById("confirm-password").value;
-	console.log(name)
-
-	if(password === confirm){
-		alert("Sign up successful!");
-		sessionstorage.setItem("name", name);
-		sessionstorage.setItem("email", email);
-		sessionstorage.setItem("password",password);
-		
-		
+button.addEventListener("click",()=>{
+	if(pass1.value === pass2.value){
+		sessionStorage.setItem("name",name.value)
+		sessionStorage.setItem("email",email.value)
+		sessionStorage.setItem("password",pass1.value)
+		alert("Sign up successful!")
 	}
-	else
-	{
-		alert("Passwords do not match");
+	else{
+		alert("Password do not match");
 	}
-	
-});
+
+})
